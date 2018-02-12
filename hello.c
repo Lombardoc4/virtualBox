@@ -9,6 +9,8 @@ int main()
   char lowerCase[] = "abcdefghijklmnopqrstuvwxyz" ;
   string str = ("Hello World!");
   unsigned int microseconds;
+  string space1 = " ";
+  string space2 = " ";
 
   for (int i = 0; i <= str.length() - 1; i++)
     {
@@ -21,8 +23,12 @@ int main()
           usleep(50000);
           write(STDOUT_FILENO, buff1, sizeof(buff1) - 1);
          }
+
+      space1 = space1 + space2;
+      cout << space1;
       cout << str[i] << endl;
-    } 
+    }
+
 
   return 0;
 }
