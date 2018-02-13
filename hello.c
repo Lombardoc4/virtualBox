@@ -11,8 +11,9 @@ int main()
   unsigned int microseconds;
   string space1 = " ";
   string space2 = " ";
+  string space3 = "           ";
 
-  for (int i = 0; i <= str.length() - 1; i++)
+  for (int i = 0; i <= 100; i++)
     {
       char buff1[] = "\b \b";
 
@@ -23,10 +24,21 @@ int main()
           usleep(50000);
           write(STDOUT_FILENO, buff1, sizeof(buff1) - 1);
          }
+      int printVal = i % (str.length() * 2);
+      if (printVal <= str.length()){
+        space1 = space1 + space2;
+        cout << space1;
+        cout << str[printVal] << endl;
+      }
+      else {
+        cout << "\b \b";
+        // space3 = space1 - space2;
+        // cout << space3;
+        // Fix this shit how can we print the space then subtract
+        // also fix print val its printing ello World! (without H)
+        cout << str[printVal - str.length()] << endl;
+      }
 
-      space1 = space1 + space2;
-      cout << space1;
-      cout << str[i] << endl;
     }
 
 
